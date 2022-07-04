@@ -1,3 +1,13 @@
+<?php
+$_server="localhost";
+$username="root";
+$password="";
+$database="zalego";
+$conn=mysqli_connect($_server,$username,$password,$database);
+
+$sql=mysqli_query($conn, "SELECT * FROM registrationdetails");
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,9 +31,9 @@
 		<nav>
 			<ul>
 				<li>
-					<a href="students.php">
-						<span><i class="fa fa-group"></i></span>
-						<span>Students</span>
+					<a href="index.php">
+						<span><i class="fa fa-backward"></i></span>
+						<span>Home</span>
 
 					</a>
 				</li>
@@ -50,20 +60,12 @@
 	<div class="main-content">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-lg-12">
+                <div class="col-lg-12">
 					<div class="card-header bg-dark text-white text-center">
 						<span>Students</span>
 					</div>
-                    <div class="card-footer"></div>
-				</div>
-			</div>
-			<div class="row">
-                <div class="col-lg-12">
-					<div class="card-header bg-dark text-white text-center">
-						<span>Student Analysis</span>
-					</div>
                     <div class="card-body ">
-                        <table class="table table-bordered table-responsive">
+                        <table class="table table-striped table-hover table-dark table-responsive">
                             <thead>
                                 <tr>
                                     <th>No</th>
@@ -72,8 +74,34 @@
                                     <th>Email</th>
                                     <th>Course</th>
                                     <th>Gender</th>
+									<th>Enrolled On</th>
+									<th>Action</th>
                                 </tr>
                             </thead>
+							<tbody>
+							<?php while ($fetctregistrationdetails=mysqli_fetch_array($sql)) {?>
+								<tr>
+	    							<td> <?php echo $fetctregistrationdetails['no']?></td>
+									<td> <?php echo $fetctregistrationdetails['fullname']?></td>
+									<td> <?php echo $fetctregistrationdetails['phonenumber']?></td>
+	    							<td> <?php echo $fetctregistrationdetails['emailaddress']?></td>
+									<td> <?php echo $fetctregistrationdetails['course']?></td>
+									<td> <?php echo $fetctregistrationdetails['gender']?></td>						
+									<td> <?php echo $fetctregistrationdetails['created_at']?></td>
+									
+
+									<td>
+									<a href="#" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
+										<a href="#" class="btn btn-info btn-sm"><i class="fa fa-eye"></i></a>
+										<a href="#" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+									</td>
+										
+								</tr>
+							<?php }?>
+								
+								
+								
+							</tbody>
                         </table>
                     </div>
 				</div>		

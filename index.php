@@ -102,9 +102,9 @@
 					<div class="body shadow">
 						<span><i class="fa fa-line-chart fa-3x"> </i></span>
 					</div>
-				</div>				
-
+				</div>					
 			</div>
+			
 
 		</div>
 		
