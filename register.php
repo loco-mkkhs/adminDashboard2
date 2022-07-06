@@ -11,45 +11,24 @@
     <title>Login</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-light shadow">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#" >Zalego Academy</a>
-            <buttton class="navbar-toggler collapsed d-flex d-lg-none flex-column justify-content-around" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="toggler-icon top-bar"></span>
-                <span class="toggler-icon middle-bar"></span>
-                <span class="toggler-icon bottom-bar"></span>
-            </buttton>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.php"> Home</a>
-                    </li>
-                    <li class="nav-item"> 
-                        <a class="nav-link active" href="register.html">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.html">Login</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <div class="header">
-            <a href="#" class="navbar-trigger">
-                <span>
-                    <center><h2 class="text-dark">Zalego Training|Admin Login</h2></center>
-                </span>
-            </a>
-        </div>
+   
+    <div class="header fixed-top">
+        <span>
+            <center><h2 class="text-dark">Zalego Training|Admin Login</h2></center>
+        </span>
+    
+    </div>
     <br>
-    <div class="container">
-        <main class="p-5 mb-4 bg-light rounded-3">
-            <center><img src="/images/zalego.jpg" alt="zalego" height="100" width="100" class="rounded-circle"></center>
+    
+    
+    
+    <form action="register.html" method="post" style="width: 450px; padding: auto;">
+        <main class="bg-light rounded-3">
+            <center><img src="images/zalego.jpg" alt="zalego" height="100" width="100" class="rounded-circle"></center>
             <a href="#" class="navbar-trigger">
                 <span></span>
             </a>          
         </main>
-    </div>
-    <form action="register.html" method="post">
         <div class="row">
             <div class="mb-3 col-lg-6">
                 <label for="username" class="form-label">Username:</label>
