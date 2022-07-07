@@ -8,7 +8,7 @@
 	<!-- All our code. write here   -->
 	<?php require_once('includes/navbar.php')?>
 	<div class="sidebar">
-	<?php require_once('includes/sidebar1.php')?>
+	<?php require_once('includes/sidebar.php')?>
 
 	</div>
 	<div class="main-content">

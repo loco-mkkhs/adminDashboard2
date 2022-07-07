@@ -11,15 +11,17 @@
 </head>
 <body>
 
-    <div class="header">
+    <div class="header fixed-top">
         <span>
             <center><h2 class="text-dark">Zalego Training|Admin Login</h2></center>
         </span>
+        
     
     </div>
+    
 
-    <div class="container">
-    <form action="login.php" style="width: 450px; padding: auto;">
+    <div class="container pt-5 ">
+    <form action="login.php" style="width: 1000px; padding: auto;">
         <main class=" m-5 bg-light rounded-3">
                     
             <center><img src="images/zalego.jpg" alt="zalego" height="100" width="100" class="rounded-circle"></center>
@@ -60,13 +62,9 @@
     
     
 
-    <!--srtipt down-->
-    
-    <script src="https://kit.fontawesome.com/b3c74f86fe.js" crossorigin="anonymous"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script> -->
-    <!-- < script src="bootstrap-5.2.0/js/bootstrap.bundle.min.js"></script> -->
-    <script src="bootstrap-5.2.0/js/bootstrap.min.js"></script>
+    <!--srtipt down-->    
+    <?php require_once('includes/scripts.php')?>
+	
     
 </body>
 </html>
