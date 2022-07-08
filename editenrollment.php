@@ -9,7 +9,30 @@ while($fetctregistrationdetails = mysqli_fetch_array($querystudent))
     $course = $fetctregistrationdetails['course'];
 }
 
+// updating user records
+if(isset($_POST['updaterecords']))
+{
+    // fetch form data
+    $id= $_POST['no'];
+    $fullname= $_POST['fullname'];
+    $phonenumber= $_POST['phonenumber'];
+    $email= $_POST['emailaddress'];
+    $gender= $_POST['gender'];
+    $course= $_POST['course'];
+    // perform the sql query
 
+    $updaterecords = mysqli_query ($conn,"UPDATE registrationdetails set fullname='$fullname',phonenumber='$phonenumber',emailaddress='$email',gender='$gender',course='$course' WHERE no='".$_GET['id']."' ");
+
+    if($updaterecords)
+    {
+        $message="Records were updated successfully";
+    }
+    else{
+        $message="Error occured whiel updating user details";
+    }
+
+
+}
 
 
 ?>
@@ -33,7 +56,7 @@ while($fetctregistrationdetails = mysqli_fetch_array($querystudent))
                             <h4>Edit Student <?php echo $fullname?> </h4>
                         </div>
                         <div class="card-body">
-                            <form action="editenrollment.php" method="GET"></form>
+                            <form action="editenrollment.php" method="POST"></form>
                                 <div class="row">
                                     <div class="mb-3 col-lg-6">
                                         <label for="Full Name:" class="form label">Full Name:</label>
@@ -81,9 +104,11 @@ while($fetctregistrationdetails = mysqli_fetch_array($querystudent))
 
                                     </div>
                                 </div>
-                                <br>
-                                <br>
-                                <button type="submit" name="submitbutton" class="btn btn-primary">Submit</button>
+                                <div class="row pt-3">
+                                    <div class="col-lg-6">
+                                        <button type="submit" name="updaterecords" class="btn btn-primary">Update records</button>
+                                    </div>
+                                </div>
                                 <br>
                             </form>
                         </div>                        
