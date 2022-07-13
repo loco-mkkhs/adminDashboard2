@@ -8,7 +8,7 @@
 	<!-- All our code. write here   -->
 	<?php require_once('includes/navbar.php')?>
 	<div class="sidebar">
-	<?php require_once('includes/sidebar.php')?>
+	<?php require_once('includes/sidebar.php')?>	
 
 	</div>
 	<div class="main-content">
@@ -19,7 +19,7 @@
 						<span>Students</span>
 					</div>
                     <div class="card-body ">
-                        <table class="table table-striped table-hover table-dark table-responsive">
+                        <table class="table table-striped table-hover table-dark table-responsive" style="font-size: 13px;">
                             <thead>
                                 <tr>
                                     <th>No</th>
@@ -48,8 +48,8 @@
 
 									<td>
 										<a href="editenrollment.php?id=<?php echo $fetctregistrationdetails['no']?>" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
-										<a href="#" class="btn btn-info btn-sm"><i class="fa fa-eye"></i></a>
-										<a href="#" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+										<a href="view-enrollment.php?id=<?php echo $fetctregistrationdetails['no']?>" class="btn btn-info btn-sm"><i class="fa fa-eye"></i></a>
+										<a href="delete-enrollment.php?id=<?php echo $fetctregistrationdetails['no']?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
 									</td>
 										
 								</tr>

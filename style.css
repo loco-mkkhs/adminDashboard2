@@ -24,7 +24,7 @@ body{
     position: absolute;
     width: 100%;
     background-color: #07800D;
-    height: 100vh;
+    height: 200vh;
     z-index: 4;
     padding-top: 50px;
 }

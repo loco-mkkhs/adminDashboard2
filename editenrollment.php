@@ -1,38 +1,17 @@
-<?php require_once('logics/dbconnection.php');
+<?php
+$message ='';
+ require_once('logics/dbconnection.php');
 $querystudent = mysqli_query($conn, "SELECT * FROM registrationdetails WHERE no='".$_GET['id']."'");
 while($fetctregistrationdetails = mysqli_fetch_array($querystudent))
 {
+    $id = $fetctregistrationdetails['no'];
     $fullname = $fetctregistrationdetails['fullname'];
     $phonenumber = $fetctregistrationdetails['phonenumber'];
     $emailaddress = $fetctregistrationdetails['emailaddress'];
     $gender = $fetctregistrationdetails['gender'];
-    $course = $fetctregistrationdetails['course'];
+    $course = $fetctregistrationdetails['course'];    
 }
-
-// updating user records
-if(isset($_POST['updaterecords']))
-{
-    // fetch form data
-    $id= $_POST['no'];
-    $fullname= $_POST['fullname'];
-    $phonenumber= $_POST['phonenumber'];
-    $email= $_POST['emailaddress'];
-    $gender= $_POST['gender'];
-    $course= $_POST['course'];
-    // perform the sql query
-
-    $updaterecords = mysqli_query ($conn,"UPDATE registrationdetails set fullname='$fullname',phonenumber='$phonenumber',emailaddress='$email',gender='$gender',course='$course' WHERE no='".$_GET['id']."' ");
-
-    if($updaterecords)
-    {
-        $message="Records were updated successfully";
-    }
-    else{
-        $message="Error occured whiel updating user details";
-    }
-
-
-}
+require_once('logics/processupdate.php');
 
 
 ?>
@@ -54,9 +33,10 @@ if(isset($_POST['updaterecords']))
                     <div class="card">
                         <div class="card-header bg-dark text-white text-center">
                             <h4>Edit Student <?php echo $fullname?> </h4>
+                            <?php echo $message ?>
                         </div>
                         <div class="card-body">
-                            <form action="editenrollment.php" method="POST"></form>
+                            <form action="editenrollment.php?id=<?php echo $id ?>" method="POST">
                                 <div class="row">
                                     <div class="mb-3 col-lg-6">
                                         <label for="Full Name:" class="form label">Full Name:</label>
